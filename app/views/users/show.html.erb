@@ -1,0 +1,18 @@
+<h1>My Profile</h1>
+<div class="container">
+  <div class="row">
+    <% if @user.stories.present?%>
+      <div class="col-md-8">
+        <ul class="list-unstyled">
+        <% @user.stories.each do |story|%>
+          <li><h2 class="h-2 display-3"><%= story.title %></h2></li>
+          <li><%= image_tag(story.picture, style: "max-width: 100%; border-radius: 10px;") %></li>
+          <li><p><%= story.content %></p></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
